@@ -1,0 +1,157 @@
+<resources>
+    <string name="app_name">تطبيق حجز السيارات</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_favorites">المفضلة</string>
+    <string name="nav_bookings">حجوزاتي</string>
+    <string name="nav_notifications">الإشعارات</string>
+    <string name="nav_profile">الملف الشخصي</string>
+
+    <string name="personal_info">المعلومات الشخصية</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="update_info">تحديث المعلومات</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="language">اللغة</string>
+    <string name="dark_mode">الوضع الليلي</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="logout">تسجيل الخروج</string>
+
+    <!-- Auth -->
+    <string name="login_title">أهلاً بك</string>
+    <string name="welcome_label">أهلاً بك،</string>
+    <string name="categories">التصنيفات</string>
+    <string name="register_title">إنشاء حساب</string>
+    <string name="email_hint">البريد الإلكتروني</string>
+    <string name="password_hint">كلمة المرور</string>
+    <string name="name_hint">الاسم الكامل</string>
+    <string name="phone_hint">رقم الهاتف</string>
+    <string name="login_button">تسجيل الدخول</string>
+    <string name="register_button">إنشاء حساب جديد</string>
+    <string name="no_account">ليس لديك حساب؟ سجل الآن</string>
+    <string name="has_account">لديك حساب بالفعل؟ سجل الدخول</string>
+
+    <!-- Home -->
+    <string name="home_greeting">مرحباً، %s!</string>
+    <string name="home_subtitle">ابحث عن سيارتك المثالية</string>
+    <string name="search_hint">ابحث عن سيارات...</string>
+    <string name="featured_cars">سيارات مميزة</string>
+    <string name="all_cars">جميع السيارات</string>
+    <string name="see_all">عرض الكل</string>
+
+    <!-- Categories -->
+    <string name="cat_all">الكل</string>
+    <string name="cat_family">عائلية</string>
+    <string name="cat_suv">جيب (SUV)</string>
+    <string name="cat_economy">اقتصادية</string>
+    <string name="cat_luxury">فاخرة</string>
+    <string name="cat_sports">سباق</string>
+    <string name="cat_electric">كهربائية</string>
+
+    <!-- Car Details -->
+    <string name="price_per_day">$%s/يوم</string>
+    <string name="book_now">احجز الآن</string>
+    <string name="select_dates">اختر التواريخ</string>
+    <string name="specifications">المواصفات</string>
+    <string name="description">الوصف</string>
+    <string name="model">الموديل</string>
+    <string name="transmission">ناقل الحركة</string>
+    <string name="fuel">نوع الوقود</string>
+    <string name="seats">المقاعد</string>
+
+    <!-- Bookings -->
+    <string name="current_bookings">الحالية</string>
+    <string name="past_bookings">السابقة</string>
+    <string name="booking_status">الحالة: %s</string>
+    <string name="booking_dates">%s - %s</string>
+    <string name="total_price">الإجمالي: %s$</string>
+    <string name="no_bookings">لا توجد حجوزات</string>
+    <string name="no_active_bookings">لا توجد حجوزات نشطة</string>
+    <string name="no_past_bookings">لا توجد حجوزات سابقة</string>
+
+    <!-- Profile -->
+    <string name="profile_info">معلومات الملف الشخصي</string>
+    <string name="settings">الإعدادات</string>
+    <string name="edit_profile">تعديل الملف الشخصي</string>
+    <string name="update">تحديث</string>
+    <string name="old_password">كلمة المرور القديمة</string>
+    <string name="new_password">كلمة المرور الجديدة</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="save_changes">حفظ التغييرات</string>
+
+    <!-- Messages -->
+    <string name="login_required">يرجى تسجيل الدخول للمتابعة</string>
+    <string name="booking_success">تم الحجز بنجاح</string>
+    <string name="booking_failed">فشل الحجز</string>
+    <string name="fill_all_fields">يرجى تعبئة جميع الحقول</string>
+    <string name="password_mismatch">كلمات المرور غير متطابقة</string>
+    <string name="update_success">تم التحديث بنجاح</string>
+    <string name="name_empty_error">الاسم لا يمكن أن يكون فارغاً</string>
+    <string name="notifications_enabled">تم تفعيل الإشعارات</string>
+    <string name="notifications_disabled">تم إيقاف الإشعارات</string>
+    <string name="cancel">إلغاء</string>
+    <string name="confirm">تأكيد</string>
+    <string name="car_number">سيارة رقم %d</string>
+    <string name="unknown">غير معروف</string>
+    <string name="no_favorites">لا توجد مفضلات بعد</string>
+    <string name="booking_status_pending">قيد الانتظار</string>
+    <string name="booking_status_active">نشط</string>
+    <string name="booking_status_completed">مكتمل</string>
+    <string name="booking_status_cancelled">ملغي</string>
+    <string name="confirm_booking">تأكيد الحجز</string>
+    <string name="booking_summary">ملخص الحجز</string>
+    <string name="car">السيارة</string>
+    <string name="dates">التواريخ</string>
+    <string name="duration">المدة</string>
+    <string name="days">أيام</string>
+
+    <!-- Payment -->
+    <string name="payment_details">تفاصيل الدفع</string>
+    <string name="card_number">رقم البطاقة</string>
+    <string name="expiry_date">تاريخ الانتهاء (MM/YY)</string>
+    <string name="cvv">CVV</string>
+    <string name="pay_now">ادفع الآن</string>
+    <string name="processing_payment">جاري معالجة الدفع...</string>
+    <string name="payment_success">تم الدفع بنجاح!</string>
+
+    <!-- Rating -->
+    <string name="rate_your_ride">قيم رحلتك</string>
+    <string name="submit">إرسال</string>
+    <string name="rate_booking">قيم</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">تصفح السيارات</string>
+    <string name="onboarding_desc_1">استكشف مجموعة واسعة من السيارات المتاحة للحجز.</string>
+    <string name="onboarding_title_2">حجز سهل</string>
+    <string name="onboarding_desc_2">احجز سيارتك المفضلة في بضع نقرات فقط.</string>
+    <string name="onboarding_title_3">استمتع برحلتك</string>
+    <string name="onboarding_desc_3">احصل على المفاتيح واستمتع برحلتك براحة تامة.</string>
+    <string name="skip">تخطي</string>
+    <string name="next">التالي</string>
+    <string name="start">ابدأ</string>
+
+    <!-- Filter -->
+    <string name="filter_options">خيارات التصفية</string>
+    <string name="price_range">نطاق السعر ($/يوم)</string>
+    <string name="fuel_type">نوع الوقود</string>
+    <string name="any">الكل</string>
+    <string name="automatic">أوتوماتيك</string>
+    <string name="manual">يدوي</string>
+    <string name="petrol">بنزين</string>
+    <string name="diesel">ديزل</string>
+    <string name="electric">كهرباء</string>
+    <string name="apply_filters">تطبيق التصفية</string>
+    <string name="no_notifications">لا توجد إشعارات حتى الآن</string>
+    <string name="notification_title_placeholder">عنوان الإشعار</string>
+    <string name="notification_body_placeholder">نص الإشعار</string>
+    <string name="notification_time_placeholder">الوقت</string>
+    
+    <!-- Notification Worker -->
+    <string name="notif_reminder_title">الحجز ينتهي قريباً</string>
+    <string name="notif_reminder_body">حجزك لسيارة %1$s سينتهي خلال أقل من ساعة.</string>
+    <string name="notif_overdue_title">تأخر الحجز</string>
+    <string name="notif_overdue_body">حجزك لسيارة %1$s متأخر. يرجى إعادة السيارة.</string>
+    <string name="notif_ended_title">انتهى وقت الحجز</string>
+    <string name="notif_ended_body">انتهى وقت حجزك لسيارة %1$s.</string>
+</resources>
