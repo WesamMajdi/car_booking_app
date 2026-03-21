@@ -1,100 +1,121 @@
-# تطبيق حجز السيارات (Car Booking App) 🚗
+# 🚗 تطبيق حجز السيارات الذكي (Car Rental Hub)
 
-تطبيق أندرويد متكامل ومصمم باحترافية لتسهيل عملية استئجار السيارات. يعتمد التطبيق على بنية **MVVM** القوية لضمان الأداء العالي وسهولة الصيانة، مع استخدام **Room Database** لتخزين البيانات محلياً.
+![Android](https://img.shields.io/badge/Platform-Android-green?logo=android)
+![Language](https://img.shields.io/badge/Language-Java-orange?logo=java)
+![Architecture](https://img.shields.io/badge/Architecture-MVVM-blue)
+![Database](https://img.shields.io/badge/Database-Room-brightgreen)
 
----
-
-## 📋 نظرة عامة على المشروع
-المشروع عبارة عن منصة رقمية تربط المستخدمين بأسطول من السيارات المتنوعة. يغطي التطبيق الدورة الكاملة لعملية التأجير، بدءاً من استعراض السيارات، وصولاً إلى الحجز، الدفع، التقييم، ومتابعة الإشعارات.
-
-### ✨ الميزات العامة
-- **نظام مستخدمين متكامل**: تسجيل دخول، إنشاء حساب، وإدارة ملف شخصي.
-- **بحث وفلترة متقدمة**: البحث حسب النوع، السعر، سنة الصنع، ونوع الوقود.
-- **إدارة الحجوزات**: متابعة الحجوزات الحالية والسابقة.
-- **نظام تقييم**: إمكانية تقييم السيارات بعد انتهاء فترة الحجز.
-- **إشعارات ذكية**: تنبيهات فورية ومخزنة لمتابعة حالة الحجز.
-- **دعم الوضع الليلي (Dark Mode)**: واجهة مريحة للعين تتكيف مع إعدادات النظام.
+تطبيق أندرويد متطور يوفر تجربة سلسة واحترافية لاستئجار السيارات، مصمم بأحدث معايير تجربة المستخدم (UX) وأقوى التقنيات البرمجية لضمان الثبات والأداء.
 
 ---
 
-## 📱 شرح صفحات التطبيق (App Screens)
-
-### 1. صفحة البداية والترحيب (Onboarding & Splash)
-- **[SplashFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/SplashFragment.java)**: شاشة ترحيبية تظهر عند فتح التطبيق مع شعار المشروع.
-- **[OnboardingFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/OnboardingFragment.java)**: تعرض ميزات التطبيق الأساسية للمستخدم الجديد من خلال واجهة تفاعلية (Slider).
-
-### 2. نظام الهوية (Authentication)
-- **[LoginFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/LoginFragment.java)**: تتيح للمستخدم الدخول إلى حسابه مع التحقق من البيانات عبر `UserRepository`.
-- **[RegisterFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/RegisterFragment.java)**: لإنشاء حساب جديد وتخزين بيانات المستخدم في قاعدة البيانات المحلية.
-
-### 3. الصفحة الرئيسية (Home Screen)
-- **[HomeFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/HomeFragment.java)**: هي قلب التطبيق، تحتوي على:
-    - شريط بحث سريع.
-    - قائمة تصنيفات السيارات (Sedan, SUV, Luxury).
-    - عرض قائمة السيارات المتاحة باستخدام `RecyclerView` و `CarAdapter`.
-    - نظام فلترة متقدم يظهر في نافذة سفلية (Bottom Sheet).
-
-### 4. تفاصيل السيارة والحجز (Car Details)
-- **[CarDetailFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/CarDetailFragment.java)**: تعرض معلومات مفصلة عن السيارة (المواصفات، السعر اليومي، الوصف).
-    - تتيح اختيار تاريخ البداية والنهاية للحجز.
-    - حساب السعر الإجمالي تلقائياً.
-    - إتمام عملية الحجز والدفع الوهمي.
-
-### 5. إدارة الحجوزات (My Bookings)
-- **[MyBookingsFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/MyBookingsFragment.java)**: لوحة تحكم تعرض الحجوزات مقسمة إلى:
-    - **[CurrentBookingsFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/CurrentBookingsFragment.java)**: للحجوزات القائمة والمستقبلية.
-    - **[PastBookingsFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/PastBookingsFragment.java)**: للسجل التاريخي للحجوزات مع خيار التقييم.
-
-### 6. المفضلة والإشعارات (Features)
-- **[FavoritesFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/FavoritesFragment.java)**: تعرض السيارات التي قام المستخدم بتمييزها للرجوع إليها لاحقاً.
-- **[NotificationFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/NotificationFragment.java)**: تعرض قائمة بجميع الإشعارات المسجلة في قاعدة البيانات (مثل تأكيد الحجز، التذكيرات).
-
-### 7. الملف الشخصي والإعدادات (Profile)
-- **[ProfileFragment](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/fragment/ProfileFragment.java)**: تتيح للمستخدم:
-    - تعديل بياناته الشخصية (الاسم، الهاتف).
-    - تغيير كلمة المرور.
-    - التحكم في إعدادات التطبيق (الوضع الليلي، اللغة).
-    - تسجيل الخروج.
+## � حول المشروع
+هذا المشروع ليس مجرد تطبيق بسيط، بل هو منصة متكاملة لإدارة تأجير السيارات محلياً. يركز التطبيق على توفير واجهة سهلة للمستخدم لاستكشاف السيارات المتاحة، إتمام عمليات الحجز، ومتابعة سجلاته التاريخية، مع نظام تنبيهات ذكي يبقيه على اطلاع دائم.
 
 ---
 
-## 🛠️ التفاصيل التقنية (Technical Deep Dive)
+## 🌟 الميزات الجوهرية (Key Features)
 
-### إدارة البيانات (Data Management)
-- يتم استخدام **Room Database** مع 4 جداول أساسية:
-    - `User`: لحفظ بيانات الحسابات.
-    - `Car`: لحفظ بيانات السيارات ومواصفاتها.
-    - `Booking`: لربط المستخدم بالسيارة وتواريخ الحجز.
-    - `Notification`: لحفظ سجل التنبيهات.
+### 👤 إدارة المستخدمين (Identity Management)
+- **نظام تسجيل دخول آمن**: يعتمد على `SessionManager` و `SharedPreferences`.
+- **الملف الشخصي التفاعلي**: إمكانية تعديل البيانات، تغيير الصورة الشخصية، والتحكم في إعدادات التطبيق.
 
-### منطق الأعمال (Business Logic)
-- **[BookingViewModel](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/viewmodel/BookingViewModel.java)**: هو المسؤول عن معالجة طلبات الحجز والتأكد من عدم وجود تعارض في المواعيد.
-- **[AppViewModelFactory](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/ui/viewmodel/AppViewModelFactory.java)**: يضمن توفير النسخ الصحيحة من الـ ViewModels مع كافة التبعيات اللازمة (Dependency Injection).
+### 🔍 استكشاف السيارات (Car Discovery)
+- **قائمة السيارات الديناميكية**: عرض السيارات مع تفاصيلها الكاملة (السعر، النوع، المحرك، عدد الركاب).
+- **الفلترة المتقدمة (Filter Engine)**: فلترة حسب سنة الصنع، نطاق السعر، ونوع الوقود.
+- **البحث اللحظي**: العثور على أي سيارة بمجرد كتابة اسمها.
 
-### التصميم (UI/UX)
-- تم استخدام **Material Design 3** لضمان تجربة مستخدم عصرية وسلسة.
-- استخدام `ConstraintLayout` لبناء واجهات مرنة تتناسب مع مختلف أحجام الشاشات.
-- أيقونات مخصصة ورسوم توضيحية لتحسين التفاعل البصري.
+### 📅 نظام الحجز والجدولة (Booking System)
+- **حجز مرن**: اختيار تواريخ الاستلام والتسليم مع حساب تلقائي للسعر.
+- **إدارة الحجوزات**: تقسيم الحجوزات إلى (حالية - سابقة) لتسهيل المتابعة.
+- **نظام التقييم**: إمكانية تقييم كل حجز بعد انتهائه لتعزيز الثقة.
+
+### 🔔 نظام التنبيهات (Notification Engine)
+- **إشعارات لحظية**: تنبيهات عند نجاح الحجز أو تحديث حالته.
+- **سجل الإشعارات**: واجهة خاصة لاستعراض كافة التنبيهات السابقة والمخزنة في قاعدة البيانات.
 
 ---
 
-## 📁 هيكلية المجلدات المحدثة
+## �️ البناء التقني (Technical Stack)
+
+- **اللغة الأساسية**: Java (Android SDK).
+- **بنية التطبيق**: **MVVM (Model-ViewModel-Intent)** لضمان فصل منطق الأعمال عن الواجهة.
+- **قاعدة البيانات**: **Room Persistence Library** (تخزين محلي سريع وآمن).
+- **التنقل**: **Jetpack Navigation Component** (إدارة التنقل بين الشاشات بسلاسة).
+- **الواجهات الرسومية**: **Material Design 3** مع استخدام `ConstraintLayout` و `MotionLayout`.
+- **المهام الخلفية**: **WorkManager** لإدارة المهام التي تعمل في الخلفية مثل الإشعارات الدورية.
+
+---
+
+## 🏗️ التصميم البرمجي (Architecture & Design)
+
+### طبقة البيانات (Data Layer)
+تتكون من 5 جداول مترابطة في قاعدة البيانات:
+1.  **[User](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/data/entity/User.java)**: يخزن بيانات الحساب الشخصي.
+2.  **[Car](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/data/entity/Car.java)**: يحتوي على كافة تفاصيل السيارة ومواصفاتها.
+3.  **[Booking](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/data/entity/Booking.java)**: يربط المستخدم بالسيارة مع التواريخ والحالة.
+4.  **[Notification](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/data/entity/Notification.java)**: سجل التنبيهات الخاص بكل مستخدم.
+5.  **[BookingWithCar](file:///c:/Users/HP/AndroidStudioProjects/car_booking_app/app/src/main/java/com/example/car_booking_app/data/entity/BookingWithCar.java)**: نموذج علاقة (Relation) لجلب بيانات الحجز مع تفاصيل السيارة المرتبطة به.
+
+---
+
+## 📱 رحلة المستخدم داخل التطبيق (App Workflow)
+
+### 1️⃣ شاشة البداية (Splash & Onboarding)
+يبدأ المستخدم برؤية شعار التطبيق ثم شاشات تعريفية تشرح له كيفية الاستخدام والفوائد التي سيحصل عليها.
+
+### 2️⃣ الصفحة الرئيسية (Home Screen)
+هنا يجد المستخدم قائمة السيارات الأكثر طلباً، مع إمكانية استخدام شريط البحث أو الفلاتر لتخصيص النتائج بناءً على احتياجاته.
+
+### 3️⃣ تفاصيل السيارة (Car Details)
+عند اختيار سيارة، تظهر صفحة تحتوي على صور السيارة، مواصفاتها الفنية، وسعرها. يمكن للمستخدم هنا اختيار تواريخ الحجز والضغط على "Book Now".
+
+### 4️⃣ إتمام الحجز (Booking Process)
+يتم التحقق من البيانات، ثم يظهر إشعار نجاح الحجز. يتم حفظ هذا الحجز في قسم "My Bookings" وإرسال تنبيه إلى سجل الإشعارات.
+
+### 5️⃣ إدارة الملف الشخصي (Profile Management)
+يمكن للمستخدم تخصيص تجربته، تغيير لغة التطبيق، أو التبديل بين الوضع الفاتح والداكن (Dark Mode).
+
+---
+
+## 📁 هيكلية المجلدات (Project Directory Structure)
+
 ```text
-app/src/main/java/com/example/car_booking_app/
-├── data/               # طبقة البيانات (DAOs, Entities, Repositories)
-├── ui/
-│   ├── adapter/        # محولات البيانات للقوائم (RecyclerView)
-│   ├── fragment/       # كافة واجهات التطبيق (Screens)
-│   └── viewmodel/      # منطق الواجهات (MVVM Logic)
-├── util/               # أدوات مساعدة (Session, Date Helpers)
-└── workers/            # المهام الخلفية (WorkManager)
+car_booking_app/
+├── app/
+│   ├── src/main/java/com/example/car_booking_app/
+│   │   ├── data/           # الطبقة المسؤولة عن البيانات (DAOs, Entities, Repositories)
+│   │   │   ├── dao/        # واجهات الاستعلام عن قاعدة البيانات
+│   │   │   ├── database/   # تهيئة Room Database
+│   │   │   └── entity/     # نماذج البيانات (Models)
+│   │   ├── ui/             # الطبقة المسؤولة عن واجهة المستخدم والمنطق المرتبط بها
+│   │   │   ├── adapter/    # محولات القوائم (RecyclerView Adapters)
+│   │   │   ├── fragment/   # كافة شاشات التطبيق (Fragments)
+│   │   │   └── viewmodel/  # منطق الأعمال وإدارة الحالة (ViewModels)
+│   │   └── util/           # أدوات مساعدة (Session Manager, Date Utils)
+│   └── src/main/res/       # كافة الموارد (Layouts, Drawables, Values)
+└── README.md               # هذا الملف التوثيقي
 ```
 
 ---
 
-## 🚀 كيف يعمل نظام الحجز؟
-1. يختار المستخدم السيارة من **HomeFragment**.
-2. ينتقل إلى **CarDetailFragment** ويحدد التواريخ.
-3. يقوم النظام بحساب التكلفة؛ عند الضغط على "Book Now"، يتم إنشاء سجل في جدول `Booking`.
-4. يتم توليد إشعار فوري وحفظه في جدول `Notification`.
-5. يظهر الحجز فوراً في صفحة **My Bookings**.
+## 🚀 كيفية تشغيل المشروع (Setup)
+
+1.  قم بعمل `Clone` للمستودع:
+    ```bash
+    git clone https://github.com/WesamMajdi/car_booking_app.git
+    ```
+2.  افتح المشروع باستخدام **Android Studio (Giraffe أو أحدث)**.
+3.  انتظر حتى ينتهي الـ `Gradle Sync`.
+4.  قم بتشغيل التطبيق على `Emulator` أو جهاز حقيقي بنظام أندرويد 8.0 فما فوق.
+
+---
+
+## 📝 ملاحظات إضافية
+- التطبيق يدعم اللغتين **العربية والإنجليزية**.
+- تم استخدام **AppViewModelFactory** بنمط Singleton لضمان حقن التبعيات بشكل صحيح وتوفير استهلاك الذاكرة.
+- قاعدة البيانات معدة لتقبل التحديثات المستقبلية دون فقدان بيانات المستخدم (Migration Ready).
+
+---
+
+**تم تطوير هذا المشروع بشغف لتقديم أفضل تجربة حجز سيارات ممكنة.** 💡
